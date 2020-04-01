@@ -2,28 +2,29 @@ package mcmaster.ringcentral.refactoring;
 
 class User {
   public static class Builder {
-    private String firstName;
-    private String lastName;
+    private String first;
+    private String last;
     private String email;
     private String accountId;
 
-    private Builder() {}
-
-    public String getFirstName() {
-      return firstName;
+    private Builder() {
     }
 
-    public Builder setFirstName(String firstName) {
-      this.firstName = firstName;
+    public String getFirst() {
+      return first;
+    }
+
+    public Builder setFirst(String first) {
+      this.first = first;
       return this;
     }
 
-    public String getLastName() {
-      return lastName;
+    public String getLast() {
+      return last;
     }
 
-    public Builder setLastName(String lastName) {
-      this.lastName = lastName;
+    public Builder setLast(String last) {
+      this.last = last;
       return this;
     }
 
@@ -50,24 +51,24 @@ class User {
     }
   }
 
-  private final String firstName;
-  private final String lastName;
+  private final String first;
+  private final String last;
   private final String email;
   private final String accountId;
 
   private User(Builder builder) {
-    firstName = builder.getFirstName();
-    lastName = builder.getLastName();
+    first = builder.getFirst();
+    last = builder.getLast();
     email = builder.getEmail();
     accountId = builder.getAccountId();
   }
 
-  public String getFirstName() {
-    return firstName;
+  public String getFirst() {
+    return first;
   }
 
-  public String getLastName() {
-    return lastName;
+  public String getLast() {
+    return last;
   }
 
   public String getEmail() {
