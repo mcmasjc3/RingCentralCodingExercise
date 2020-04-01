@@ -3,14 +3,17 @@ package mcmaster.ringcentral.refactoring;
 import java.util.List;
 
 public class Service {
-  @Autowired public RepoClass repo;
+  private final RepoClass repo;
 
-  public Service() {}
+  @AutoWired
+  public Service(RepoClass repo) {
+    this.repo = repo;
+  }
 
-  public User addUser(String firstName, String lastName, String email, String accountId) {
+  public User addUser(String first, String last, String email, String accountId) {
     return User.newBuilder()
-        .setFirstName(firstName)
-        .setLastName(lastName)
+        .setFirst(first)
+        .setLast(last)
         .setEmail(email)
         .setAccountId(accountId)
         .build();
