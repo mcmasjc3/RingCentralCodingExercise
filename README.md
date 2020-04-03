@@ -71,5 +71,5 @@ be safer to create a `JwtPayload` class.
 
 I wrote a unit test to exercise the code.  This is how I normally test anything I write.  I didn't
 write tests for the refactoring piece because it doesn't compile and I don't know which
-dependencies I need.  I didn'd for the queueing piece for the same reason.
+dependencies I need.  I didn't for the queueing piece for the same reason.
 
