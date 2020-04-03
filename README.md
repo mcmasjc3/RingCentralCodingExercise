@@ -55,5 +55,21 @@ The client gets a MessageProducer instance and calls `addMessage()` with the top
 
 There obviously is a lot more to add, but I think this is sufficient for this exercise.
 
+## Part 3 - JWT parsing
 
+For this exercise, I wrote a `JwtParser` class to do the main work.  It parses an encoded JWT and
+returns a `Map<String, String>` containing the keys and values from the payload.
+
+It handles multiple authentication schemes by having a `Map<String, JwtAuthenticator>`.  The key
+is the algorithm specified in the header.  `JwtAuthenticator` is an interface which can be
+implemented with any desired algorithm.  For simplicity, I just hard-coded a static map in the
+class.  In real-life I would inject the Map in the constructor.
+
+I created a `JwtHeader` class, since I know the values.  For the payload, I don't know which
+properties to expect, so I return a simple Map.  If the properties were well-defined, it would
+be safer to create a `JwtPayload` class.
+
+I wrote a unit test to exercise the code.  This is how I normally test anything I write.  I didn't
+write tests for the refactoring piece because it doesn't compile and I don't know which
+dependencies I need.  I didn'd for the queueing piece for the same reason.
 
